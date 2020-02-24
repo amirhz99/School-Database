@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHOOL_DATABASE", "SCHOOL_DATABASE\SCHOOL_DATABASE.csproj", "{40196AFF-86A9-4246-9BC9-4345E5F16474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNI", "UNI\UNI.csproj", "{EE5A80B5-6548-4B71-8D56-514E3FAEB792}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40196AFF-86A9-4246-9BC9-4345E5F16474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40196AFF-86A9-4246-9BC9-4345E5F16474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40196AFF-86A9-4246-9BC9-4345E5F16474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40196AFF-86A9-4246-9BC9-4345E5F16474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5A80B5-6548-4B71-8D56-514E3FAEB792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5A80B5-6548-4B71-8D56-514E3FAEB792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5A80B5-6548-4B71-8D56-514E3FAEB792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5A80B5-6548-4B71-8D56-514E3FAEB792}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97541798-B47B-40C0-9E70-6E9F88A5485D}
+	EndGlobalSection
+EndGlobal

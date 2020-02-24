@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniversityMStoreContainer" CdmEntityContainer="UniversityEntities">
+    <EntitySetMapping Name="advisors">
+      <EntityTypeMapping TypeName="UniversityM.advisor">
+        <MappingFragment StoreEntitySet="advisor">
+          <ScalarProperty Name="s_Id" ColumnName="s_Id" />
+          <ScalarProperty Name="i_id" ColumnName="i_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classrooms">
+      <EntityTypeMapping TypeName="UniversityM.classroom">
+        <MappingFragment StoreEntitySet="classroom">
+          <ScalarProperty Name="building" ColumnName="building" />
+          <ScalarProperty Name="room_no" ColumnName="room_no" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="UniversityM.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="course_Id" ColumnName="course_Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="credits" ColumnName="credits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departments">
+      <EntityTypeMapping TypeName="UniversityM.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="building" ColumnName="building" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instructors">
+      <EntityTypeMapping TypeName="UniversityM.instructor">
+        <MappingFragment StoreEntitySet="instructor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prereqs">
+      <EntityTypeMapping TypeName="UniversityM.prereq">
+        <MappingFragment StoreEntitySet="prereq">
+          <ScalarProperty Name="course_d" ColumnName="course_d" />
+          <ScalarProperty Name="prereq_id" ColumnName="prereq_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sections">
+      <EntityTypeMapping TypeName="UniversityM.section">
+        <MappingFragment StoreEntitySet="section">
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="building" ColumnName="building" />
+          <ScalarProperty Name="room_no" ColumnName="room_no" />
+          <ScalarProperty Name="time_slot_id" ColumnName="time_slot_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="UniversityM.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="tot_cred" ColumnName="tot_cred" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="takes">
+      <EntityTypeMapping TypeName="UniversityM.take">
+        <MappingFragment StoreEntitySet="takes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teaches">
+      <EntityTypeMapping TypeName="UniversityM.teach">
+        <MappingFragment StoreEntitySet="teaches">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="time_slot">
+      <EntityTypeMapping TypeName="UniversityM.time_slot">
+        <MappingFragment StoreEntitySet="time_slot">
+          <ScalarProperty Name="time_slot_id" ColumnName="time_slot_id" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

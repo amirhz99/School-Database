@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b42c048bbbc040f496d6afa484816e99" Name="Diagram1" ZoomLevel="64" >
+        <EntityTypeShape EntityType="UniversityModel.Student" Width="1.5" PointX="7.5" PointY="6.625" />
+        <EntityTypeShape EntityType="UniversityModel.CourseStudent" Width="1.5" PointX="9.75" PointY="9.125" />
+        <EntityTypeShape EntityType="UniversityModel.Teacher" Width="1.5" PointX="7.5" PointY="9.75" />
+        <EntityTypeShape EntityType="UniversityModel.Department" Width="1.5" PointX="5.25" PointY="8.625" />
+        <AssociationConnector Association="UniversityModel.DepartmentCourse" />
+        <AssociationConnector Association="UniversityModel.DepartmentTeacher" />
+        <AssociationConnector Association="UniversityModel.DepartmentStudent" />
+        <AssociationConnector Association="UniversityModel.TeacherCourse" />
+        <EntityTypeShape EntityType="UniversityModel.Course" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="UniversityModel.Takes" Width="1.5" PointX="2.875" PointY="5.875" />
+        <AssociationConnector Association="UniversityModel.TakesStudent" />
+        <AssociationConnector Association="UniversityModel.TakesCourse" />
+        <AssociationConnector Association="UniversityModel.CourseTeacher" />
+        <AssociationConnector Association="UniversityModel.CourseStudentStudent" />
+        <AssociationConnector Association="UniversityModel.CourseDepartment" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

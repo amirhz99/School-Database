@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniversityModelStoreContainer" CdmEntityContainer="UniversityContainer">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Student)">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Average" ColumnName="Average" />
+          <ScalarProperty Name="PassUnit" ColumnName="PassUnit" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.CourseStudent)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Student" ColumnName="Student" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeacherSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Teacher)">
+        <MappingFragment StoreEntitySet="TeacherSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Department)">
+        <MappingFragment StoreEntitySet="DepartmentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Course)">
+        <MappingFragment StoreEntitySet="CourseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TakesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Takes)">
+        <MappingFragment StoreEntitySet="TakesSet">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DepartmentCourse" TypeName="UniversityModel.DepartmentCourse" StoreEntitySet="Courses">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentTeacher" TypeName="UniversityModel.DepartmentTeacher" StoreEntitySet="TeacherSet">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentStudent" TypeName="UniversityModel.DepartmentStudent" StoreEntitySet="Students">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TeacherCourse" TypeName="UniversityModel.TeacherCourse" StoreEntitySet="Courses">
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Teacher_Id" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesStudent" TypeName="UniversityModel.TakesStudent" StoreEntitySet="Students">
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="StudentId" ColumnName="Takes_StudentId" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesCourse" TypeName="UniversityModel.TakesCourse" StoreEntitySet="CourseSet">
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="StudentId" ColumnName="Takes_StudentId" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseTeacher" TypeName="UniversityModel.CourseTeacher" StoreEntitySet="TeacherSet">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Course1_Id" />
+      </EndProperty>
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseStudentStudent" TypeName="UniversityModel.CourseStudentStudent" StoreEntitySet="Students">
+      <EndProperty Name="CourseStudent">
+        <ScalarProperty Name="Id" ColumnName="CourseStudent_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseDepartment" TypeName="UniversityModel.CourseDepartment" StoreEntitySet="DepartmentSet">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Course1_Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

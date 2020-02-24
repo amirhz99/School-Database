@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="681012d80fb741f49e866d5e6a52c273" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="UniversityM.advisor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.classroom" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.course" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.department" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.instructor" Width="1.5" PointX="6.125" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.prereq" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.section" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.Student" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.take" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.teach" Width="1.5" PointX="10.125" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityM.time_slot" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="UniversityM.Studenttake" />
+        <AssociationConnector Association="UniversityM.takesection" />
+        <AssociationConnector Association="UniversityM.sectioncourse" />
+        <AssociationConnector Association="UniversityM.departmentinstructor" />
+        <AssociationConnector Association="UniversityM.instructorteach" />
+        <AssociationConnector Association="UniversityM.teachsection" />
+        <AssociationConnector Association="UniversityM.classroomsection" />
+        <AssociationConnector Association="UniversityM.advisorinstructor" />
+        <AssociationConnector Association="UniversityM.advisorStudent" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

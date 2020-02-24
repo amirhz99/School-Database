@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UniversityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UniversityModelStoreContainer">
+    <EntitySet Name="Students" EntityType="UniversityModel.Store.Students" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="UniversityModel.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TeacherSet" EntityType="UniversityModel.Store.TeacherSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartmentSet" EntityType="UniversityModel.Store.DepartmentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseSet" EntityType="UniversityModel.Store.CourseSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TakesSet" EntityType="UniversityModel.Store.TakesSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="DepartmentCourse" Association="UniversityModel.Store.DepartmentCourse">
+      <End Role="Department" EntitySet="DepartmentSet" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentTeacher" Association="UniversityModel.Store.DepartmentTeacher">
+      <End Role="Department" EntitySet="DepartmentSet" />
+      <End Role="Teacher" EntitySet="TeacherSet" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentStudent" Association="UniversityModel.Store.DepartmentStudent">
+      <End Role="Department" EntitySet="DepartmentSet" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="TeacherCourse" Association="UniversityModel.Store.TeacherCourse">
+      <End Role="Teacher" EntitySet="TeacherSet" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="TakesStudent" Association="UniversityModel.Store.TakesStudent">
+      <End Role="Takes" EntitySet="TakesSet" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="TakesCourse" Association="UniversityModel.Store.TakesCourse">
+      <End Role="Takes" EntitySet="TakesSet" />
+      <End Role="Course" EntitySet="CourseSet" />
+    </AssociationSet>
+    <AssociationSet Name="CourseTeacher" Association="UniversityModel.Store.CourseTeacher">
+      <End Role="Course" EntitySet="CourseSet" />
+      <End Role="Teacher" EntitySet="TeacherSet" />
+    </AssociationSet>
+    <AssociationSet Name="CourseStudentStudent" Association="UniversityModel.Store.CourseStudentStudent">
+      <End Role="CourseStudent" EntitySet="Courses" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="CourseDepartment" Association="UniversityModel.Store.CourseDepartment">
+      <End Role="Course" EntitySet="CourseSet" />
+      <End Role="Department" EntitySet="DepartmentSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Average" Type="int" Nullable="true" />
+    <Property Name="PassUnit" Type="int" Nullable="true" />
+    <Property Name="DeptName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+    <Property Name="Takes_StudentId" Type="int" Nullable="false" />
+    <Property Name="CourseStudent_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Unit" Type="int" Nullable="true" />
+    <Property Name="Capacity" Type="int" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Student" Type="int" Nullable="true" />
+    <Property Name="Semester" Type="int" Nullable="true" />
+    <Property Name="TeacherId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeptName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+    <Property Name="Teacher_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeacherSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DeptName" Type="int" Nullable="true" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+    <Property Name="Course1_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Course1_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Unit" Type="int" Nullable="true" />
+    <Property Name="Capacity" Type="int" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Semester" Type="int" Nullable="true" />
+    <Property Name="TeacherId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeptName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Takes_StudentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TakesSet">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <Association Name="DepartmentCourse">
+    <End Role="Department" Type="UniversityModel.Store.DepartmentSet" Multiplicity="1" />
+    <End Role="Course" Type="UniversityModel.Store.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentTeacher">
+    <End Role="Department" Type="UniversityModel.Store.DepartmentSet" Multiplicity="1" />
+    <End Role="Teacher" Type="UniversityModel.Store.TeacherSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentStudent">
+    <End Role="Department" Type="UniversityModel.Store.DepartmentSet" Multiplicity="1" />
+    <End Role="Student" Type="UniversityModel.Store.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeacherCourse">
+    <End Role="Teacher" Type="UniversityModel.Store.TeacherSet" Multiplicity="1" />
+    <End Role="Course" Type="UniversityModel.Store.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Teacher_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TakesStudent">
+    <End Role="Takes" Type="UniversityModel.Store.TakesSet" Multiplicity="1" />
+    <End Role="Student" Type="UniversityModel.Store.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Takes">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Takes_StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TakesCourse">
+    <End Role="Takes" Type="UniversityModel.Store.TakesSet" Multiplicity="1" />
+    <End Role="Course" Type="UniversityModel.Store.CourseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Takes">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Takes_StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseTeacher">
+    <End Role="Course" Type="UniversityModel.Store.CourseSet" Multiplicity="1" />
+    <End Role="Teacher" Type="UniversityModel.Store.TeacherSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Course1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseStudentStudent">
+    <End Role="CourseStudent" Type="UniversityModel.Store.Courses" Multiplicity="1" />
+    <End Role="Student" Type="UniversityModel.Store.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseStudent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CourseStudent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseDepartment">
+    <End Role="Course" Type="UniversityModel.Store.CourseSet" Multiplicity="1" />
+    <End Role="Department" Type="UniversityModel.Store.DepartmentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="Course1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="UniversityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="UniversityContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Students" EntityType="UniversityModel.Student" />
+          <EntitySet Name="Courses" EntityType="UniversityModel.CourseStudent" />
+          <EntitySet Name="TeacherSet" EntityType="UniversityModel.Teacher" />
+          <EntitySet Name="DepartmentSet" EntityType="UniversityModel.Department" />
+          <AssociationSet Name="DepartmentCourse" Association="UniversityModel.DepartmentCourse">
+            <End Role="Department" EntitySet="DepartmentSet" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentTeacher" Association="UniversityModel.DepartmentTeacher">
+            <End Role="Department" EntitySet="DepartmentSet" />
+            <End Role="Teacher" EntitySet="TeacherSet" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentStudent" Association="UniversityModel.DepartmentStudent">
+            <End Role="Department" EntitySet="DepartmentSet" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="TeacherCourse" Association="UniversityModel.TeacherCourse">
+            <End Role="Teacher" EntitySet="TeacherSet" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <EntitySet Name="CourseSet" EntityType="UniversityModel.Course" />
+          <EntitySet Name="TakesSet" EntityType="UniversityModel.Takes" />
+          <AssociationSet Name="TakesStudent" Association="UniversityModel.TakesStudent">
+            <End Role="Takes" EntitySet="TakesSet" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="TakesCourse" Association="UniversityModel.TakesCourse">
+            <End Role="Takes" EntitySet="TakesSet" />
+            <End Role="Course" EntitySet="CourseSet" />
+          </AssociationSet>
+          <AssociationSet Name="CourseTeacher" Association="UniversityModel.CourseTeacher">
+            <End Role="Course" EntitySet="CourseSet" />
+            <End Role="Teacher" EntitySet="TeacherSet" />
+          </AssociationSet>
+          <AssociationSet Name="CourseStudentStudent" Association="UniversityModel.CourseStudentStudent">
+            <End Role="CourseStudent" EntitySet="Courses" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="CourseDepartment" Association="UniversityModel.CourseDepartment">
+            <End Role="Course" EntitySet="CourseSet" />
+            <End Role="Department" EntitySet="DepartmentSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Average" Type="Int32" />
+          <Property Name="PassUnit" Type="Int32" />
+          <Property Name="DeptName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="UniversityModel.DepartmentStudent" FromRole="Student" ToRole="Department" />
+          <NavigationProperty Name="Takes" Relationship="UniversityModel.TakesStudent" FromRole="Student" ToRole="Takes" />
+          <NavigationProperty Name="CourseStudent" Relationship="UniversityModel.CourseStudentStudent" FromRole="Student" ToRole="CourseStudent" />
+        </EntityType>
+        <EntityType Name="CourseStudent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="Int32" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Student" Type="Int32" />
+          <Property Name="Semester" Type="Int32" />
+          <Property Name="TeacherId" Type="String" Nullable="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="UniversityModel.DepartmentCourse" FromRole="Course" ToRole="Department" />
+          <NavigationProperty Name="Teacher" Relationship="UniversityModel.TeacherCourse" FromRole="Course" ToRole="Teacher" />
+          <NavigationProperty Name="Student1" Relationship="UniversityModel.CourseStudentStudent" FromRole="CourseStudent" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeptName" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="UniversityModel.DepartmentTeacher" FromRole="Teacher" ToRole="Department" />
+          <NavigationProperty Name="Course" Relationship="UniversityModel.TeacherCourse" FromRole="Teacher" ToRole="Course" />
+          <NavigationProperty Name="Course1" Relationship="UniversityModel.CourseTeacher" FromRole="Teacher" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Course" Relationship="UniversityModel.DepartmentCourse" FromRole="Department" ToRole="Course" />
+          <NavigationProperty Name="Teacher" Relationship="UniversityModel.DepartmentTeacher" FromRole="Department" ToRole="Teacher" />
+          <NavigationProperty Name="Student" Relationship="UniversityModel.DepartmentStudent" FromRole="Department" ToRole="Student" />
+          <NavigationProperty Name="Course1" Relationship="UniversityModel.CourseDepartment" FromRole="Department" ToRole="Course" />
+        </EntityType>
+        <Association Name="DepartmentCourse">
+          <End Type="UniversityModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="UniversityModel.CourseStudent" Role="Course" Multiplicity="*" />
+        </Association>
+        <Association Name="DepartmentTeacher">
+          <End Type="UniversityModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="UniversityModel.Teacher" Role="Teacher" Multiplicity="*" />
+        </Association>
+        <Association Name="DepartmentStudent">
+          <End Type="UniversityModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="UniversityModel.Student" Role="Student" Multiplicity="*" />
+        </Association>
+        <Association Name="TeacherCourse">
+          <End Type="UniversityModel.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="UniversityModel.CourseStudent" Role="Course" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="Int32" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Status" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Semester" Type="Int32" />
+          <Property Name="TeacherId" Type="String" Nullable="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Takes" Relationship="UniversityModel.TakesCourse" FromRole="Course" ToRole="Takes" />
+          <NavigationProperty Name="Teacher" Relationship="UniversityModel.CourseTeacher" FromRole="Course" ToRole="Teacher" />
+          <NavigationProperty Name="Department" Relationship="UniversityModel.CourseDepartment" FromRole="Course" ToRole="Department" />
+        </EntityType>
+        <EntityType Name="Takes">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Student" Relationship="UniversityModel.TakesStudent" FromRole="Takes" ToRole="Student" />
+          <NavigationProperty Name="Course" Relationship="UniversityModel.TakesCourse" FromRole="Takes" ToRole="Course" />
+        </EntityType>
+        <Association Name="TakesStudent">
+          <End Type="UniversityModel.Takes" Role="Takes" Multiplicity="1" />
+          <End Type="UniversityModel.Student" Role="Student" Multiplicity="*" />
+        </Association>
+        <Association Name="TakesCourse">
+          <End Type="UniversityModel.Takes" Role="Takes" Multiplicity="1" />
+          <End Type="UniversityModel.Course" Role="Course" Multiplicity="*" />
+        </Association>
+        <Association Name="CourseTeacher">
+          <End Type="UniversityModel.Course" Role="Course" Multiplicity="1" />
+          <End Type="UniversityModel.Teacher" Role="Teacher" Multiplicity="*" />
+        </Association>
+        <Association Name="CourseStudentStudent">
+          <End Type="UniversityModel.CourseStudent" Role="CourseStudent" Multiplicity="1" />
+          <End Type="UniversityModel.Student" Role="Student" Multiplicity="*" />
+        </Association>
+        <Association Name="CourseDepartment">
+          <End Type="UniversityModel.Course" Role="Course" Multiplicity="1" />
+          <End Type="UniversityModel.Department" Role="Department" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniversityModelStoreContainer" CdmEntityContainer="UniversityContainer">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Student)">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Average" ColumnName="Average" />
+          <ScalarProperty Name="PassUnit" ColumnName="PassUnit" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.CourseStudent)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Student" ColumnName="Student" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeacherSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Teacher)">
+        <MappingFragment StoreEntitySet="TeacherSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Department)">
+        <MappingFragment StoreEntitySet="DepartmentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Course)">
+        <MappingFragment StoreEntitySet="CourseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TakesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(UniversityModel.Takes)">
+        <MappingFragment StoreEntitySet="TakesSet">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DepartmentCourse" TypeName="UniversityModel.DepartmentCourse" StoreEntitySet="Courses">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentTeacher" TypeName="UniversityModel.DepartmentTeacher" StoreEntitySet="TeacherSet">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentStudent" TypeName="UniversityModel.DepartmentStudent" StoreEntitySet="Students">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TeacherCourse" TypeName="UniversityModel.TeacherCourse" StoreEntitySet="Courses">
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Teacher_Id" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesStudent" TypeName="UniversityModel.TakesStudent" StoreEntitySet="Students">
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="StudentId" ColumnName="Takes_StudentId" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TakesCourse" TypeName="UniversityModel.TakesCourse" StoreEntitySet="CourseSet">
+      <EndProperty Name="Takes">
+        <ScalarProperty Name="StudentId" ColumnName="Takes_StudentId" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseTeacher" TypeName="UniversityModel.CourseTeacher" StoreEntitySet="TeacherSet">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Course1_Id" />
+      </EndProperty>
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseStudentStudent" TypeName="UniversityModel.CourseStudentStudent" StoreEntitySet="Students">
+      <EndProperty Name="CourseStudent">
+        <ScalarProperty Name="Id" ColumnName="CourseStudent_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseDepartment" TypeName="UniversityModel.CourseDepartment" StoreEntitySet="DepartmentSet">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Course1_Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

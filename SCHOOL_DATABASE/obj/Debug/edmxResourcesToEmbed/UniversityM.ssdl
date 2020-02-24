@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UniversityM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="advisor">
+    <Key>
+      <PropertyRef Name="s_Id" />
+    </Key>
+    <Property Name="s_Id" Type="int" Nullable="false" />
+    <Property Name="i_id" Type="int" />
+  </EntityType>
+  <EntityType Name="classroom">
+    <Key>
+      <PropertyRef Name="building" />
+    </Key>
+    <Property Name="building" Type="int" Nullable="false" />
+    <Property Name="room_no" Type="int" />
+    <Property Name="capacity" Type="int" />
+  </EntityType>
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="course_Id" />
+    </Key>
+    <Property Name="course_Id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="dept_name" Type="nvarchar(max)" />
+    <Property Name="credits" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="department">
+    <Key>
+      <PropertyRef Name="dept_name" />
+    </Key>
+    <Property Name="dept_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="building" Type="nvarchar(max)" />
+    <Property Name="budget" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="instructor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="dept_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="salary" Type="int" />
+  </EntityType>
+  <EntityType Name="prereq">
+    <Key>
+      <PropertyRef Name="prereq_id" />
+    </Key>
+    <Property Name="course_d" Type="int" Nullable="false" />
+    <Property Name="prereq_id" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="section">
+    <Key>
+      <PropertyRef Name="sec_id" />
+    </Key>
+    <Property Name="course_id" Type="int" Nullable="false" />
+    <Property Name="sec_id" Type="int" Nullable="false" />
+    <Property Name="semester" Type="nvarchar" MaxLength="50" />
+    <Property Name="year" Type="nvarchar" MaxLength="50" />
+    <Property Name="building" Type="nvarchar" MaxLength="50" />
+    <Property Name="room_no" Type="int" />
+    <Property Name="time_slot_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="dept_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="tot_cred" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="takes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="course_id" Type="int" />
+    <Property Name="sec_id" Type="int" />
+    <Property Name="semester" Type="nvarchar" MaxLength="50" />
+    <Property Name="year" Type="int" />
+    <Property Name="grade" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="teaches">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="course_id" Type="int" />
+    <Property Name="sec_id" Type="int" />
+    <Property Name="semester" Type="nvarchar" MaxLength="50" />
+    <Property Name="year" Type="int" />
+  </EntityType>
+  <EntityType Name="time_slot">
+    <Key>
+      <PropertyRef Name="time_slot_id" />
+    </Key>
+    <Property Name="time_slot_id" Type="int" Nullable="false" />
+    <Property Name="day" Type="nvarchar" MaxLength="50" />
+    <Property Name="start_time" Type="date" />
+    <Property Name="end_time" Type="date" />
+  </EntityType>
+  <EntityContainer Name="UniversityMStoreContainer">
+    <EntitySet Name="advisor" EntityType="Self.advisor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="classroom" EntityType="Self.classroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instructor" EntityType="Self.instructor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prereq" EntityType="Self.prereq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="section" EntityType="Self.section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="takes" EntityType="Self.takes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teaches" EntityType="Self.teaches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="time_slot" EntityType="Self.time_slot" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

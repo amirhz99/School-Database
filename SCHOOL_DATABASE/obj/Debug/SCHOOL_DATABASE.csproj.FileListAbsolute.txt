@@ -1,0 +1,44 @@
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.exe.config
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.exe
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.pdb
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csprojResolveAssemblyReference.cache
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.frmError.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Properties.Resources.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.GenerateResource.cache
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.CoreCompileInputs.cache
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.exe
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.pdb
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.MainForm.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.dll
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.xml
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.CopyComplete
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Karname.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.SelectUnit.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Enter.resources
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\UDB.mdf
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\UDB_log.ldf
+C:\Users\Sepehr\Desktop\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Register.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\UDB.mdf
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\UDB_log.ldf
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.exe.config
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.exe
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\SCHOOL_DATABASE.pdb
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.dll
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.xml
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csprojResolveAssemblyReference.cache
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Enter.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Karname.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.MainForm.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.frmError.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Properties.Resources.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.Register.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.SelectUnit.resources
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.GenerateResource.cache
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.CoreCompileInputs.cache
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.csproj.CopyComplete
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.exe
+C:\Users\Sepehr\Desktop\فایل درسی و دانشگاهی\SCHOOL_DATABASE\SCHOOL_DATABASE\obj\Debug\SCHOOL_DATABASE.pdb
